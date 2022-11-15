@@ -1,0 +1,14 @@
+Stormtrooper Fred van het Spindle kantoor is in paniek! De Spindlers kunnen het kantoor niet meer inkomen omdat de wachtwoorden voor het kantoor niet meer werken.
+Het lijkt er op dat de database met wachtwoorden corrupt is. Een groot deel van de wachtwoorden voldoet niet aan de Spindle wachtwoordregels. 
+Om uit te zoeken wat het probleem is, is er een lijst (De puzzel input) met wachtwoorden (Uit de corrupte database) beschikbaar gemaakt. Bij elk wachtwoord staat de regel voor het wachtwoord vermeld.
+
+Voorbeeld:
+    1-3 a: abcde
+    1-3 b: cdefg
+    2-9 c: ccccccccc
+
+Elke regel geeft de regel voor het wachtwoord aan, en het wachtwoord zelf. De wachtwoordregel geeft het laagste en het hoogste aantal keren dat de gegeven letter moet voorkomen in het wachtwoord. Bijvoorbeeld, 1-3 a betekent dat de letter a minimaal 1 keer moet voorkomen en maximaal 3 keer.
+
+In het voorbeeld van hierboven zijn 2 wachtwoorden geldig. Het middelste wachtwoord, cdefg, is niet geldig. Er zit geen letter b in het wachtwoord. Het eerste en het derde voorbeeld zijn wel geldig, Het eerste bevat 1 maal de letter a en de derde 9 maal de letter c.
+
+Gegeven de puzzle input, hoeveel wachtwoorden zijn er geldig?

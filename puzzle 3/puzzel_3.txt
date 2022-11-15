@@ -1,0 +1,35 @@
+Het is pauze op het Spindle hoofdkantoor en naast het bekende ping pong gebeuren, zijn er een aantal Spindlers die graag op de Mortal Combat machine een echte klassieker willen spelen.
+Paniek! De computer wil niet opstarten. Dringende hulp is nodig, en jij bent moet het oplossen.
+Na een uitgebreid onderzoek, ontdek jij een rare infinite loop in de boot code (puzzel input) van de machine. Dit moet geen probleem zijn, maar eerst moet de code in een veilige omgeving uitgevoerd kunnen worden.
+
+De boot code is opgeslagen in een text file en per regel staat er 1 instructie. Elke instructie bestaat uit een operatie (acc, jmp of nop) en een argument (Een signed nummer. Voorbeelden: +4 en -20).
+Acc verhoogt of verlaagt een globale variabele die ook wel de accumulator wordt genoemd met de waarde gegeven in het argument. Bijvoorbeeld, acc +7 zal de waarde van de accumulator met 7 verhogen. De accumulator start met de waarde 0. Na een acc instructie, de instructie die er onder staat zal worden uitgevoerd.
+Jmp springt naar een instructie ten opzichte van zijn eigen positie. De volgende instructie die wordt uitgevoerd kan worden gevonden door het argument van de jmp instructie te gebruiken als offset. Bijvoorbeeld; jmp +1 zal de instructie onder de huidige jmp gaan uitvoeren. Jmp -20 zal de instructie die 20 regels boven de huidige instructie staat uitvoeren.
+Nop doet helemaal niks en staat voor No Operation. Het programma gaat verder met de instructie die onder de nop staat.
+Een voorbeeld programma:
+nop +0
+acc +1
+jmp +4
+acc +3
+jmp -3
+acc -99
+acc +1
+jmp -4
+acc +6
+
+Het programma zal in deze volgorde worden uitgevoerd:
+nop +0  | 1
+acc +1  | 2, 8(!)
+jmp +4  | 3
+acc +3  | 6
+jmp -3  | 7
+acc -99 |
+acc +1  | 4
+jmp -4  | 5
+acc +6  |
+
+Eerst, de nop +0 doet helemaal niks. In de volgende stap wordt de accumulator opgehoogd van 0 naar 1 (acc +1). In de volgende instructie (jmp +4) wordt er een jump gemaakt van 4 stappen naar de instructie acc +1. Deze instructie verhoogt de waarde van de accumulator van 1 naar 2. Dan wordt jpm -4 uitgevoerd en springt het programma naar acc +3. Hier wordt de accumulator aangepast van 2 naar 5. De jmp -3 zal het programma weer terugbrengen naar acc +1 van de tweede regel. Deze regel is al eerder uitgevoerd.
+
+En hier zit het programma in een infinite loop en zal dus nooit stoppen. Het moment dat het programma een instructie een tweede keer wil uitvoeren, is het moment om het programma te stoppen. Deze instructie moet dus niet meer worden uitgevoerd.
+Op het moment van stoppen van het voorbeeld is de waarde van de accumulator 5. Dat is het antwoord voor het voorbeeld.
+Voer nu de instructies van de puzzel input uit. Als een instructie voor de tweede keer zal worden uitgevoerd, wat is dan de waarde van de accumulator?

@@ -1,0 +1,34 @@
+Spindle werkt aan een complexe nieuwe architectuur voor het ontwikkelen van nieuwe features. Er is een grote lijst aan stappen gemaakt die nodig zijn om de nieuwe architectuur op te zetten. Voor elke stap is bepaald wat de afhankelijkheden zijn. Voordat een stap kan worden opgepakt moeten eerst alle afhankelijkheden worden uitgevoerd.
+
+De invoer bevat de complete lijst van afhankelijkheden. Elke stap is aangegeven met een enkele letter. Elke regel bevat 1 afhankelijkheid.
+
+Neem bijvoorbeeld deze lijst:
+
+Step C must be finished before step A can begin.
+Step C must be finished before step F can begin.
+Step A must be finished before step B can begin.
+Step A must be finished before step D can begin.
+Step B must be finished before step E can begin.
+Step D must be finished before step E can begin.
+Step F must be finished before step E can begin.
+
+Visueel zien de afhankelijkheden er zo uit:
+
+  -->A--->B--
+ /    \      \
+C      -->D----->E
+ \           /
+  ---->F-----
+
+Jouw opdracht is om te bepalen wat de juiste volgorde van stappen is. Als meer dan 1 stap genomen kan worden, kies je de stap die op alfabetische volgorde als eerste komt. In het voorbeeld wordt dit:
+
+    Alleen stap C kan genomen worden, omdat die geen afhankelijkheden heeft.
+    Daarna kunnen stappen A en F genomen worden, A komt eerst in het alfabet, dus die wordt gekozen.
+    Alhoewel F eerder beschikbaar was, zijn nu ook stappen B en D beschikbaar, en B komt eerder voor in het alfabet, dus die wordt gekozen.
+    Vervolgens zijn alleen D en F beschikbaar. E is nog niet beschikbaar omdat nog niet aan alle afhankelijkheden van E is voldaan. Daarom wordt nu D gekozen.
+    F is de enige keus die nu beschikbaar is.
+    Als laatste wordt E gekozen.
+
+Dus in dit voorbeeld is de correcte volgorde CABDFE.
+
+Wat is de correcte volgorde van stappen gegeven de invoer?

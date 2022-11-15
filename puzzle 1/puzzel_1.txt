@@ -1,0 +1,16 @@
+Een medewerker van Spindle probeert een pakket met sprankelnieuwe VoIP telefoons te leveren aan klant in een heel groot flat gebouw. Misschien kun jij helpen?!
+
+De instructies om de juiste kamer te vinden zijn een beetje verwarrend: je begint op de begane grond (verdieping 0) en je volgt de instructies 1 karakter per keer.
+
+Haakje openen, (, betekent een verdieping omhoog, en haakje sluiten, ), een verdieping omlaag.
+
+Het flat gebouw is erg hoog, en de kelder erg diep; je zal nooit de laagste of hoogste verdieping vinden.
+
+Bijvoorbeeld:
+    (()) en ()() resulteren beide in verdieping 0 (begane grond).
+    ((( en (()(()( resulteren beide in verdieping 3.
+    ))((((( eindigen ook op verdieping 3.
+    ()) en ))( resulteren beide in verdieping -1 (de kelder).
+    ))) en )())()) resulteren beide in verdieping -3.
+
+Naar welke verdieping leiden de instructies?
