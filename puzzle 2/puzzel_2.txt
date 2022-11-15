@@ -12,3 +12,18 @@ Elke regel geeft de regel voor het wachtwoord aan, en het wachtwoord zelf. De wa
 In het voorbeeld van hierboven zijn 2 wachtwoorden geldig. Het middelste wachtwoord, cdefg, is niet geldig. Er zit geen letter b in het wachtwoord. Het eerste en het derde voorbeeld zijn wel geldig, Het eerste bevat 1 maal de letter a en de derde 9 maal de letter c.
 
 Gegeven de puzzle input, hoeveel wachtwoorden zijn er geldig?
+
+
+--- BONUS ---
+
+Hoewel het er op lijkt dat je de wachtwoorden goed gevalideerd hebt, lijken ze niet voldoen aan de eisen voor veilige wachtwoorden.
+
+De regels moeten net even anders worden geinterpreteerd: de getallen beschrijven twee posities in het wachtwoord, waarbij 1 het eerste karakter is, 2 het tweede karakter, enzovoorts. Precies 1 van deze 2 posities moet de gegeven letter bevatten. Andere voorkomens van de letters doen er niet toe.
+
+Gegeven de lijst van hierboven:
+
+    1-3 a: abcde is geldig: positie 1 bevat een a en positie 3 niet.
+    1-3 b: cdefg is ongeldig: positie 1 en 3 bevatten beiden geen b.
+    2-9 c: ccccccccc is ongeldig: zowel positie 2 en positie 9 bevatten een c.
+
+Hoeveel wachtwoorden zijn geldig met dit nieuwe wachtwoord beleid?
